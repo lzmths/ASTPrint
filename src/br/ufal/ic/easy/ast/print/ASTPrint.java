@@ -54,6 +54,7 @@ public class ASTPrint extends ASTVisitor {
 	 */
 	private void print(ASTNode node, String parrent) {
 		List properties = node.structuralPropertiesForType();
+		System.out.println(properties.toString());
 	    for (Iterator iterator = properties.iterator(); iterator.hasNext();) {
 	        Object descriptor = iterator.next();
 	        if (descriptor instanceof SimplePropertyDescriptor) {

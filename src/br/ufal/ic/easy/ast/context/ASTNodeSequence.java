@@ -1,6 +1,10 @@
 package br.ufal.ic.easy.ast.context;
 
+import java.util.List;
+
 import org.eclipse.jdt.core.dom.ASTNode;
+import org.eclipse.jdt.core.dom.ChildPropertyDescriptor;
+import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
 
 /**
  * Generates an AST Node Sequence
@@ -27,9 +31,9 @@ public class ASTNodeSequence {
 		String currentASTNodeSequence;
 		if (node == null) return ASTNodeSequence;
 		if(ASTNodeSequence == null) {
-			currentASTNodeSequence = "" + node.getNodeType();
+			currentASTNodeSequence = "" + node.getClass().getSimpleName();
 		} else {
-			currentASTNodeSequence = ASTNodeSequence + "<-" + node.getNodeType();
+			currentASTNodeSequence = ASTNodeSequence + "<-" + node.getClass().getSimpleName();
 		}
 		return generate(node.getParent(), currentASTNodeSequence);
 	}
