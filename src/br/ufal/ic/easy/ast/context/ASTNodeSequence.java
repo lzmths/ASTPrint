@@ -1,10 +1,6 @@
 package br.ufal.ic.easy.ast.context;
 
-import java.util.List;
-
 import org.eclipse.jdt.core.dom.ASTNode;
-import org.eclipse.jdt.core.dom.ChildPropertyDescriptor;
-import org.eclipse.jdt.core.dom.StructuralPropertyDescriptor;
 
 /**
  * Generates an AST Node Sequence

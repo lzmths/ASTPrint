@@ -18,6 +18,19 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
 
 public class Runner {
 	
+	public void callASTParser(File original, File mutant) {
+		try {
+			if (original == null || mutant == null) return;
+			CompilationUnit cuOriginal = parse(readFileToString(original));
+			CompilationUnit cuMutant = parse(readFileToString(mutant));
+			ASTCompare aSTCompare = new ASTCompare();
+			boolean result = aSTCompare.equals(cuOriginal.getRoot(), cuMutant.getRoot(), true);
+			System.out.println("Are they equals? " + result);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+	}
+	
 	/**
 	 * Run
 	 * @param args arguments with original program and mutant

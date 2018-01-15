@@ -35,6 +35,7 @@ public class ASTCompare {
 	        // if node types are the same we can assume that they will have the same
 	        // properties
 	        if (left.getNodeType() != right.getNodeType()) {
+	        	nSequence.print(right);
 	            return false;
 	        }
 	        List<StructuralPropertyDescriptor> props = left.structuralPropertiesForType();
